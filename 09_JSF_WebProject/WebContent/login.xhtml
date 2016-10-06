@@ -20,19 +20,18 @@
 			<h:panelGrid columns="3">
 				<!-- Validation automatique et implicite -->
 		
-		Mail : <h:inputText id="mailId" value="#{monBeansAgent.a.mail}"
-					label="Mail" required="true">
-					<f:validator validatorId="validatorPers"></f:validator>
+		Mail : <h:inputText id="mailId" value="#{agentMB.mail}" label="Mail"
+					required="true">
+
 				</h:inputText>
 				<h:message for="mailId" style="color:red"></h:message>
 			
-		Password: <h:inputSecret id="passwordId"
-					value="#{monBeansAgent.a.mdp}" required="true"
-					validatorId="validatorPers">
+		Password: <h:inputSecret id="passwordId" value="#{agentMB.mdp}"
+					required="true">
 				</h:inputSecret>
 				<h:message for="passwordId" style="color:red"></h:message>
 				<h:panelGroup style="display:block; text-align:center">
-					<h:commandButton value="Valider" action="acceuil"></h:commandButton>
+					<h:commandButton value="Valider" action="#{agentMB.connexion}"></h:commandButton>
 				</h:panelGroup>
 			</h:panelGrid>
 
