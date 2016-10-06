@@ -11,23 +11,28 @@
 	<title>Mes Utilisateurs</title>
 </h:head>
 <h:body>
-	<h:form>
-		<p:growl id="messages" showDetail="true" />
+	<div style="background-color: black">
+		<h:form>
+			<p:growl id="messages" showDetail="true" />
 
-		<p:menuButton value="Options">
-			<p:menuitem value="Ajouter" url="ajouter.xhtml" icon="ui-icon-document" />
-			<p:menuitem value="Modifier" url="modifier.xhtml" icon="ui-icon-pencil" />
-			<p:menuitem value="Suppprimer" url="supprimer.xhtml" icon="ui-icon-close" />
-			<p:separator />
-			<p:menuitem value="Logout" url="login.xhtml" icon="ui-icon-star" />
-		</p:menuButton>
-	</h:form>
+			<p:menuButton value="Options">
+				<p:menuitem value="Ajouter" url="ajouter.xhtml"
+					icon="ui-icon-document" />
+				<p:menuitem value="Modifier" url="modifier.xhtml"
+					icon="ui-icon-pencil" />
+				<p:menuitem value="Suppprimer" url="supprimer.xhtml"
+					icon="ui-icon-close" />
+				<p:separator />
+				<p:menuitem value="Logout" url="login.xhtml" icon="ui-icon-star" />
+			</p:menuButton>
+		</h:form>
+	</div>
 	<br />
-	
-		<h2 style="text-align: center;">Mes USERS</h2>
+
+	<h2 style="text-align: center;">Mes USERS</h2>
 
 	<br />
-		
+<h:form>
 	<p:dataTable var="user" value="#{agentMB.listUsers}">
 		<p:column headerText="Id">
 			<h:outputText value="#{user.id}" />
@@ -48,6 +53,16 @@
 		<p:column headerText="Nom">
 			<h:outputText value="#{user.nom}" />
 		</p:column>
+
+		<p:column style="text-align: center">
+
+				<p:commandLink update="@all" action="#{userMB.supprimer()}" icon="ui-icon-trash" >
+				<h:outputText value="Supp"/>
+				<f:setPropertyActionListener value="#{user}" target="#{userMB.user1}"/>
+				</p:commandLink>
+		</p:column>
+
 	</p:dataTable>
+	</h:form>
 </h:body>
 </html>

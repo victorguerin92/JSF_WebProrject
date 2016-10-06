@@ -26,16 +26,16 @@
 			<h:panelGrid columns="2" cellpadding="5">
 
 				<p:outputLabel for="prenom" value="Prenom:" />
-				<p:inputMask id="prenom" value="#{userMB.prenom}" />
+				<p:inputMask id="prenom" value="#{userMB.user1.prenom}" />
 
 				<p:outputLabel for="mail" value="Mail:"/>
-				<p:inputMask id="mail" value="#{userMB.mail}" mask="**********@*****.aa"/>
+				<p:inputMask id="mail" value="#{userMB.user1.mail}" mask="**********@*****.aa"/>
 				
 				<p:outputLabel for="password" value="Password:" />
-				<p:inputMask id="password" value="#{userMB.password}" />
+				<p:inputMask id="password" value="#{userMB.user1.password}" />
 
 				<p:outputLabel for="nom" value="Nom:" />
-				<p:inputMask id="nom" value="#{userMB.nom}" />
+				<p:inputMask id="nom" value="#{userMB.user1.nom}" />
 
 
 				<h:commandButton value="Ajouter" action="#{userMB.ajouter}" />
