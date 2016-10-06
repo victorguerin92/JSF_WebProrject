@@ -16,9 +16,9 @@
 			<p:growl id="messages" showDetail="true" />
 
 			<p:menuButton value="Options">
-				<p:menuitem value="Home" url="acceuil.xhtml" />
+				<p:menuitem value="Home" url="acceuil.xhtml" icon="ui-icon-home"/>
 				<p:separator />
-				<p:menuitem value="Logout" url="login.xhtml" />
+				<p:menuitem value="Logout" url="login.xhtml" icon="ui-icon-star" />
 			</p:menuButton>
 		</h:form>
 		<h2 style="text-align: center;">Modifier un utilisateur</h2>
@@ -32,8 +32,8 @@
 					<p:inputMask id="prenom" value="#{userMB.prenom}" />
 
 					<p:outputLabel for="mail" value="Mail:" />
-					<p:inputMask id="mail" value="#{userMB.mail}" />
-
+					<p:inputMask id="mail" value="#{userMB.mail}" mask="***********@*******.aa"/>
+										
 					<p:outputLabel for="password" value="Password:" />
 					<p:inputMask id="password" value="#{userMB.password}" />
 
