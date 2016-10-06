@@ -2,7 +2,8 @@ package fr.adaming.managedBeans;
 
 import java.io.Serializable;
 
-import fr.adaming.model.Agent;
+import fr.adaming.service.AgentServiceImpl;
+import fr.adaming.service.IAgentService;
 
 public class MonBeansAgent implements Serializable {
 
@@ -11,20 +12,33 @@ public class MonBeansAgent implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private Agent a;
 	
+	IAgentService AgentService = new AgentServiceImpl();
+
 
 	/**
-	 * @return the a
+	 * 
 	 */
-	public Agent getA() {
-		return a;
+	public MonBeansAgent() {
+		super();
 	}
 
+
 	/**
-	 * @param a the a to set
+	 * @return the agentService
 	 */
-	public void setA(Agent a) {
-		this.a = a;
+	public IAgentService getAgentService() {
+		return AgentService;
 	}
+
+
+	/**
+	 * @param agentService the agentService to set
+	 */
+	public void setAgentService(IAgentService agentService) {
+		AgentService = agentService;
+	}
+	
+	
+	
 }
