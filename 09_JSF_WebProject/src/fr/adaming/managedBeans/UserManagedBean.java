@@ -46,7 +46,7 @@ public class UserManagedBean implements Serializable {
 
 	/**
 	 * @param id
-	 *            the id to set
+	 * the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
@@ -91,7 +91,7 @@ public class UserManagedBean implements Serializable {
 
 	/**
 	 * @param mail
-	 *            the mail to set
+	 * the mail to set
 	 */
 	public void setMail(String mail) {
 		this.mail = mail;
@@ -112,20 +112,6 @@ public class UserManagedBean implements Serializable {
 		this.password = password;
 	}
 
-	/**
-	 * @return the userService
-	 */
-	public IUserService getUserService() {
-		return userService;
-	}
-
-	/**
-	 * @param userService
-	 *            the userService to set
-	 */
-	public void setUserService(IUserService userService) {
-		this.userService = userService;
-	}
 
 	/**
 	 * @return the user
@@ -136,7 +122,7 @@ public class UserManagedBean implements Serializable {
 
 	/**
 	 * @param user
-	 *            the user to set
+	 * the user to set
 	 */
 	public void setUser(List<User> user) {
 		this.listUsers = user;
@@ -151,14 +137,27 @@ public class UserManagedBean implements Serializable {
 
 	/**
 	 * @param user1
-	 *            the user1 to set
+	 * the user1 to set
 	 */
 	public void setUser1(User user1) {
 		this.user1 = user1;
 	}
 
+	//Methode ajouter pour ajouter un client
 	public String ajouter() {
+		user1 = new User(nom, prenom, mail, password);
 		userService.ajouterUserService(user1);
+		listUsers = userService.getallUserService();
+		return "acceuil";
+	}
+	public String supprimer() {
+		userService.supprimerUserService(id);
+		listUsers = userService.getallUserService();
+		return "acceuil";
+	}
+	public String modifier() {
+		user1 = new User(id,nom, prenom, mail, password);
+		userService.modifierUserService(user1);
 		listUsers = userService.getallUserService();
 		return "acceuil";
 	}

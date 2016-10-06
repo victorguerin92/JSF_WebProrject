@@ -29,7 +29,7 @@
 			<p:inputMask id="prenom" value="#{userMB.prenom}" />
 
 			<p:outputLabel for="mail" value="Mail:" />
-			<p:inputMask id="mail" value="#{userMB.mail}" />
+			<p:inputMask id="mail" value="#{userMB.mail}" mask="aaaaaaaa@aaa.aaa"/>
 
 			<p:outputLabel for="password" value="Password:" />
 			<p:inputMask id="password" value="#{userMB.password}" />
@@ -38,7 +38,7 @@
 			<p:inputMask id="nom" value="#{userMB.nom}" />
 
 
-			<h:commandButton value="Submit" action="#{userMB.ajouter()}" />
+			<h:commandButton value="Ajouter" action="#{userMB.ajouter}" />
 
 		</h:panelGrid>
 

@@ -25,9 +25,9 @@
 		<h:form>
 			<h:panelGrid columns="2" cellpadding="5">
 				<p:outputLabel for="id" value="ID: " />
-				<p:inputMask id="id" value="#{userService.id}" />
+				<p:inputMask id="id" value="#{userMB.id}" />
 
-				<h:commandButton value="Submit" action="acceuil" />
+				<h:commandButton value="Supprimer" action="#{userMB.supprimer}" />
 
 			</h:panelGrid>
 
