@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Supprimer</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:growl id="messages" showDetail="true" />
+
+		<p:menuButton value="Options">
+			<p:menuitem value="Home" url="acceuil.xhtml" />
+			<p:separator />
+			<p:menuitem value="Logout" url="login.xhtml" />
+		</p:menuButton>
+	</h:form>
+	<h2 style="text-align: center;">Supprimer un utilisateur</h2>
+	<div align="center">
+		<h:form>
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel for="id" value="ID: " />
+				<p:inputMask id="id" value="#{userService.id}" />
+
+				<h:commandButton value="Submit" action="acceuil" />
+
+			</h:panelGrid>
+
+
+		</h:form>
+	</div>
+
+
+</h:body>
+</html>
