@@ -16,14 +16,13 @@ public class MonBeanUser implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private User u;
-	User user1 = new User();
-	
+		
 	/**
 	 * @param user1
 	 */
 	public MonBeanUser(User user1) {
 		super();
-		this.user1 = user1;
+		
 	}
 
 	/**
