@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 
 import fr.adaming.model.User;
@@ -12,7 +11,7 @@ import fr.adaming.service.IUserService;
 import fr.adaming.service.UserServiceImpl;
 
 @ManagedBean(name ="userMB")
-@SessionScoped
+@ViewScoped
 public class UserManagedBean implements Serializable {
 
 	/**
@@ -26,6 +25,8 @@ public class UserManagedBean implements Serializable {
 	private String mail;
 	private String password;
 	private User user1;
+	
+	
 	IUserService userService = new UserServiceImpl();
 	List<User> listUsers = userService.getallUserService();
 
@@ -146,20 +147,20 @@ public class UserManagedBean implements Serializable {
 
 	//Methode ajouter pour ajouter un client
 	public String ajouter() {
-		
+		user1 = new User(getNom(), getPrenom(), getMail(), getPassword());
 		userService.ajouterUserService(user1);
 		listUsers = userService.getallUserService();
 		return "acceuil";
 	}
 	
 	public String supprimer() {
-		userService.supprimerUserService(user1.getId());
+		userService.supprimerUserService(id);
 		listUsers = userService.getallUserService();
 		return "acceuil";
 	}
 	
 	public String modifier() {
-	
+		user1 = new User(getId(), getNom(), getPrenom(), getMail(), getPassword());
 		userService.modifierUserService(user1);
 		listUsers = userService.getallUserService();
 		return "acceuil";

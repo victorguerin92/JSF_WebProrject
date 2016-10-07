@@ -133,7 +133,8 @@ public class UserDaoImpl implements IUserDao {
 			ps.setString(3, u.getPassword());
 			ps.setString(4, u.getNom());
 			ps.setInt(5, u.getId());
-
+			System.out.println(u.getPrenom());
+			
 			// Etape 5 : Envoyer la requete et recuperer le resultat
 
 			int verif = ps.executeUpdate();
